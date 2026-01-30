@@ -684,12 +684,12 @@ function App() {
               <p className="text-gray-500 text-sm mb-3">Of neem direct contact op:</p>
               <a 
                 href="mailto:omarnassar1127@gmail.com"
-                className="inline-flex items-center gap-2 text-emerald-400 hover:text-emerald-300 transition"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl liquid-glass font-medium hover:bg-white/10 transition"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                omarnassar1127@gmail.com
+                Stuur een e-mail
               </a>
             </div>
           </div>
