@@ -198,7 +198,7 @@ function App() {
 
       {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 px-4 py-4">
-        <div className={`max-w-6xl mx-auto rounded-2xl px-4 md:px-6 py-3 flex justify-between items-center transition-all duration-300 ${scrolled ? 'bg-gray-950/95 backdrop-blur-xl shadow-lg shadow-black/20 border border-white/10' : 'liquid-glass'}`}>
+        <div className={`max-w-6xl mx-auto rounded-2xl px-4 md:px-6 py-3 flex justify-between items-center transition-all duration-300 ${scrolled ? 'bg-black/95 backdrop-blur-xl shadow-lg shadow-black/50 border border-white/10' : 'liquid-glass'}`}>
           <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-2 cursor-pointer">
             <div className="w-8 h-8 rounded-lg whatsapp-gradient flex items-center justify-center glow-green-subtle">
               <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -706,13 +706,14 @@ function App() {
                     className="w-full px-4 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-emerald-500/50 focus:outline-none focus:bg-white/10 transition backdrop-blur text-base"
                   />
                 </div>
-                <select
-                  required
-                  value={companyType}
-                  onChange={(e) => setCompanyType(e.target.value)}
-                  className="w-full px-4 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-emerald-500/50 focus:outline-none focus:bg-white/10 transition backdrop-blur text-base appearance-none cursor-pointer"
-                >
-                  <option value="" disabled className="bg-gray-900">Type bedrijf</option>
+                <div className="relative">
+                  <select
+                    required
+                    value={companyType}
+                    onChange={(e) => setCompanyType(e.target.value)}
+                    className="w-full px-4 py-4 pr-12 rounded-xl bg-white/5 border border-white/10 focus:border-emerald-500/50 focus:outline-none focus:bg-white/10 transition backdrop-blur text-base appearance-none cursor-pointer"
+                  >
+                    <option value="" disabled className="bg-gray-900">Selecteer type bedrijf ▼</option>
                   <option value="kapper" className="bg-gray-900">✂️ Kapper / Barbershop</option>
                   <option value="restaurant" className="bg-gray-900">🍽️ Restaurant / Horeca</option>
                   <option value="tandarts" className="bg-gray-900">🦷 Tandarts / Mondzorg</option>
@@ -720,7 +721,13 @@ function App() {
                   <option value="schoonheidssalon" className="bg-gray-900">💅 Schoonheidssalon</option>
                   <option value="garage" className="bg-gray-900">🚗 Garage / Autobedrijf</option>
                   <option value="anders" className="bg-gray-900">📦 Anders</option>
-                </select>
+                  </select>
+                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                    <svg className="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </div>
+                </div>
                 <button
                   type="submit"
                   className="w-full px-6 py-4 rounded-xl whatsapp-gradient font-semibold hover:opacity-90 transition glow-green-subtle"
