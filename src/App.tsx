@@ -1,11 +1,22 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 function App() {
   const [email, setEmail] = useState('')
+  const [name, setName] = useState('')
+  const [companyType, setCompanyType] = useState('')
   const [submitted, setSubmitted] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [showTerms, setShowTerms] = useState(false)
   const [showPrivacy, setShowPrivacy] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -14,15 +25,17 @@ function App() {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ 
+          name,
           email,
-          _subject: "🤖 Nieuwe ZapBot demo aanvraag!",
+          companyType,
+          _subject: `🤖 Nieuwe ZapBot demo aanvraag van ${name}!`,
           source: "zapbot-landing"
         })
       })
       setSubmitted(true)
     } catch (error) {
       console.error('Form error:', error)
-      setSubmitted(true) // Show success anyway, Formspree handles retries
+      setSubmitted(true)
     }
   }
 
@@ -185,7 +198,7 @@ function App() {
 
       {/* Navbar */}
       <nav className="fixed top-0 w-full z-50 px-4 py-4">
-        <div className="max-w-6xl mx-auto liquid-glass rounded-2xl px-4 md:px-6 py-3 flex justify-between items-center">
+        <div className={`max-w-6xl mx-auto rounded-2xl px-4 md:px-6 py-3 flex justify-between items-center transition-all duration-300 ${scrolled ? 'bg-gray-950/95 backdrop-blur-xl shadow-lg shadow-black/20 border border-white/10' : 'liquid-glass'}`}>
           <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} className="flex items-center gap-2 cursor-pointer">
             <div className="w-8 h-8 rounded-lg whatsapp-gradient flex items-center justify-center glow-green-subtle">
               <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -674,18 +687,43 @@ function App() {
                 <p className="text-emerald-400 font-medium">Bedankt! We nemen snel contact op.</p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
-                <input
-                  type="email"
+              <form onSubmit={handleSubmit} className="space-y-4">
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <input
+                    type="text"
+                    required
+                    placeholder="Je naam"
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                    className="w-full px-4 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-emerald-500/50 focus:outline-none focus:bg-white/10 transition backdrop-blur text-base"
+                  />
+                  <input
+                    type="email"
+                    required
+                    placeholder="je@email.nl"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="w-full px-4 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-emerald-500/50 focus:outline-none focus:bg-white/10 transition backdrop-blur text-base"
+                  />
+                </div>
+                <select
                   required
-                  placeholder="je@email.nl"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-4 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-emerald-500/50 focus:outline-none focus:bg-white/10 transition backdrop-blur text-base"
-                />
+                  value={companyType}
+                  onChange={(e) => setCompanyType(e.target.value)}
+                  className="w-full px-4 py-4 rounded-xl bg-white/5 border border-white/10 focus:border-emerald-500/50 focus:outline-none focus:bg-white/10 transition backdrop-blur text-base appearance-none cursor-pointer"
+                >
+                  <option value="" disabled className="bg-gray-900">Type bedrijf</option>
+                  <option value="kapper" className="bg-gray-900">✂️ Kapper / Barbershop</option>
+                  <option value="restaurant" className="bg-gray-900">🍽️ Restaurant / Horeca</option>
+                  <option value="tandarts" className="bg-gray-900">🦷 Tandarts / Mondzorg</option>
+                  <option value="fysiotherapeut" className="bg-gray-900">💪 Fysiotherapeut</option>
+                  <option value="schoonheidssalon" className="bg-gray-900">💅 Schoonheidssalon</option>
+                  <option value="garage" className="bg-gray-900">🚗 Garage / Autobedrijf</option>
+                  <option value="anders" className="bg-gray-900">📦 Anders</option>
+                </select>
                 <button
                   type="submit"
-                  className="px-6 md:px-8 py-4 rounded-xl whatsapp-gradient font-semibold hover:opacity-90 transition whitespace-nowrap glow-green-subtle"
+                  className="w-full px-6 py-4 rounded-xl whatsapp-gradient font-semibold hover:opacity-90 transition glow-green-subtle"
                 >
                   Demo aanvragen
                 </button>
