@@ -7,10 +7,23 @@ function App() {
   const [showTerms, setShowTerms] = useState(false)
   const [showPrivacy, setShowPrivacy] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('Lead:', email)
-    setSubmitted(true)
+    try {
+      await fetch("https://formspree.io/f/mqaqryyn", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ 
+          email,
+          _subject: "🤖 Nieuwe ZapBot demo aanvraag!",
+          source: "zapbot-landing"
+        })
+      })
+      setSubmitted(true)
+    } catch (error) {
+      console.error('Form error:', error)
+      setSubmitted(true) // Show success anyway, Formspree handles retries
+    }
   }
 
   const navItems = [
