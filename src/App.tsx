@@ -246,10 +246,6 @@ function App() {
               },
             ].map((item, i) => (
               <div key={i} className="relative">
-                {/* Connector line */}
-                {i < 3 && (
-                  <div className="hidden md:block absolute top-12 left-[60%] w-[80%] h-[2px] bg-gradient-to-r from-emerald-500/50 to-transparent"></div>
-                )}
                 <div className="liquid-glass-card rounded-xl p-6 text-center relative">
                   <div className="w-12 h-12 rounded-full whatsapp-gradient flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                     {item.step}
