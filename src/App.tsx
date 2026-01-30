@@ -188,7 +188,7 @@ function App() {
               <a 
                 key={item.href}
                 href={item.href} 
-                className="text-sm text-gray-300 hover:text-white transition"
+                className="text-sm text-white hover:text-emerald-400 transition"
               >
                 {item.label}
               </a>
@@ -578,8 +578,8 @@ function App() {
               <span className="text-xs md:text-sm">AVG / GDPR compliant</span>
             </div>
             <div className="liquid-glass rounded-full px-4 py-2 flex items-center gap-2">
-              <span className="text-emerald-400">🇳🇱</span>
-              <span className="text-xs md:text-sm">Data blijft in Nederland</span>
+              <span className="text-emerald-400">🔐</span>
+              <span className="text-xs md:text-sm">Jouw data, jouw eigendom</span>
             </div>
             <div className="liquid-glass rounded-full px-4 py-2 flex items-center gap-2">
               <span className="text-emerald-400">🤝</span>
@@ -711,18 +711,18 @@ function App() {
               </div>
               
               <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
-                <button onClick={() => setShowTerms(true)} className="text-gray-400 hover:text-white transition">
+                <button onClick={() => setShowTerms(true)} className="text-white hover:text-emerald-400 transition">
                   Algemene Voorwaarden
                 </button>
-                <button onClick={() => setShowPrivacy(true)} className="text-gray-400 hover:text-white transition">
+                <button onClick={() => setShowPrivacy(true)} className="text-white hover:text-emerald-400 transition">
                   Privacybeleid
                 </button>
-                <a href="mailto:omarnassar1127@gmail.com" className="text-gray-400 hover:text-white transition">
+                <a href="mailto:omarnassar1127@gmail.com" className="text-white hover:text-emerald-400 transition">
                   Contact
                 </a>
               </div>
               
-              <p className="text-gray-500 text-sm">
+              <p className="text-white text-sm">
                 © 2026 ZapBot. Made in Amsterdam 🇳🇱
               </p>
             </div>
