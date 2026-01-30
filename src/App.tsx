@@ -208,6 +208,165 @@ function App() {
         </div>
       </section>
 
+      {/* Setup Process / How we connect */}
+      <section className="py-20 px-4 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Zo werkt de opstart</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              In 4 simpele stappen ben je live. Wij doen het zware werk.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-4 gap-6">
+            {[
+              { 
+                step: "1", 
+                title: "Kennismaking", 
+                desc: "15 min call om je bedrijf te begrijpen",
+                icon: "👋"
+              },
+              { 
+                step: "2", 
+                title: "Info delen", 
+                desc: "Openingstijden, prijslijst, veelgestelde vragen",
+                icon: "📋"
+              },
+              { 
+                step: "3", 
+                title: "Wij bouwen", 
+                desc: "AI trainen op jouw bedrijf + WhatsApp koppelen",
+                icon: "⚙️"
+              },
+              { 
+                step: "4", 
+                title: "Live!", 
+                desc: "Testen, finetunen en live — binnen 1 week",
+                icon: "🚀"
+              },
+            ].map((item, i) => (
+              <div key={i} className="relative">
+                {/* Connector line */}
+                {i < 3 && (
+                  <div className="hidden md:block absolute top-12 left-[60%] w-[80%] h-[2px] bg-gradient-to-r from-emerald-500/50 to-transparent"></div>
+                )}
+                <div className="liquid-glass-card rounded-xl p-6 text-center relative">
+                  <div className="w-12 h-12 rounded-full whatsapp-gradient flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+                    {item.step}
+                  </div>
+                  <span className="text-2xl mb-2 block">{item.icon}</span>
+                  <h3 className="font-semibold text-lg mb-2">{item.title}</h3>
+                  <p className="text-gray-400 text-sm">{item.desc}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* What we need */}
+          <div className="mt-16 liquid-glass-strong rounded-2xl p-8">
+            <h3 className="text-xl font-semibold mb-6 text-center">Wat hebben we van je nodig?</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-emerald-400">📱</span>
+                </div>
+                <div>
+                  <h4 className="font-medium mb-1">WhatsApp Business</h4>
+                  <p className="text-gray-400 text-sm">Je bestaande nummer of wij helpen met nieuw</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-emerald-400">📄</span>
+                </div>
+                <div>
+                  <h4 className="font-medium mb-1">Basisinfo</h4>
+                  <p className="text-gray-400 text-sm">Prijzen, openingstijden, veelgestelde vragen</p>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center flex-shrink-0 mt-1">
+                  <span className="text-emerald-400">📅</span>
+                </div>
+                <div>
+                  <h4 className="font-medium mb-1">Agenda (optioneel)</h4>
+                  <p className="text-gray-400 text-sm">Google Calendar, Treatwell, of eigen systeem</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Transparency / Data Access */}
+      <section className="py-20 px-4 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">Jij blijft in controle</h2>
+            <p className="text-gray-400 max-w-2xl mx-auto">
+              Geen black box. Je ziet alles, past alles aan, en het is jouw data.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Full chat access */}
+            <div className="liquid-glass-card rounded-2xl p-6">
+              <div className="w-12 h-12 rounded-xl bg-blue-500/20 flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Volledige chat historie</h3>
+              <p className="text-gray-400">
+                Lees alle gesprekken terug. Zie precies wat de AI zegt en hoe klanten reageren. Exporteer wanneer je wilt.
+              </p>
+            </div>
+
+            {/* Improve & adjust */}
+            <div className="liquid-glass-card rounded-2xl p-6">
+              <div className="w-12 h-12 rounded-xl bg-purple-500/20 flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Zelf verbeteren</h3>
+              <p className="text-gray-400">
+                Antwoord niet goed? Pas het aan via een simpel dashboard. De AI leert direct van je feedback.
+              </p>
+            </div>
+
+            {/* System integration */}
+            <div className="liquid-glass-card rounded-2xl p-6">
+              <div className="w-12 h-12 rounded-xl bg-amber-500/20 flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Koppel je systemen</h3>
+              <p className="text-gray-400">
+                Werkt met je bestaande agenda, boekingssysteem of CRM. Wij bouwen de koppeling, jij hoeft niks te doen.
+              </p>
+            </div>
+          </div>
+
+          {/* Trust badges */}
+          <div className="mt-12 flex flex-wrap justify-center gap-6">
+            <div className="liquid-glass rounded-full px-4 py-2 flex items-center gap-2">
+              <span className="text-emerald-400">🔒</span>
+              <span className="text-sm">AVG / GDPR compliant</span>
+            </div>
+            <div className="liquid-glass rounded-full px-4 py-2 flex items-center gap-2">
+              <span className="text-emerald-400">🇳🇱</span>
+              <span className="text-sm">Data blijft in Nederland</span>
+            </div>
+            <div className="liquid-glass rounded-full px-4 py-2 flex items-center gap-2">
+              <span className="text-emerald-400">🤝</span>
+              <span className="text-sm">Altijd menselijke support</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Pricing */}
       <section className="py-20 px-4 relative z-10">
         <div className="max-w-6xl mx-auto">
