@@ -86,7 +86,7 @@ function App() {
                   <h3 className="text-lg font-semibold text-white mt-6">4. Looptijd en Opzegging</h3>
                   <p>Minimale looptijd van 3 maanden. Opzegging met een opzegtermijn van 1 maand.</p>
                   <h3 className="text-lg font-semibold text-white mt-6">5. Contact</h3>
-                  <p>Voor vragen: <a href="mailto:info.zapbot@omardev.xyz" className="text-emerald-400 hover:underline">info.zapbot@omardev.xyz</a></p>
+                  <p>Voor vragen: <a href="mailto:info@zapbot.nl" className="text-emerald-400 hover:underline">info@zapbot.nl</a></p>
                 </>
               ) : (
                 <>
@@ -100,7 +100,7 @@ function App() {
                   <h3 className="text-lg font-semibold text-white mt-6">4. Term and Termination</h3>
                   <p>Minimum term of 3 months. Cancellation with 1 month notice.</p>
                   <h3 className="text-lg font-semibold text-white mt-6">5. Contact</h3>
-                  <p>For questions: <a href="mailto:info.zapbot@omardev.xyz" className="text-emerald-400 hover:underline">info.zapbot@omardev.xyz</a></p>
+                  <p>For questions: <a href="mailto:info@zapbot.nl" className="text-emerald-400 hover:underline">info@zapbot.nl</a></p>
                 </>
               )}
             </div>
@@ -132,7 +132,7 @@ function App() {
                   <h3 className="text-lg font-semibold text-white mt-6">3. Uw Rechten</h3>
                   <p>Inzage, rectificatie, verwijdering, beperking, dataportabiliteit, bezwaar.</p>
                   <h3 className="text-lg font-semibold text-white mt-6">4. Contact</h3>
-                  <p><a href="mailto:info.zapbot@omardev.xyz" className="text-emerald-400 hover:underline">info.zapbot@omardev.xyz</a></p>
+                  <p><a href="mailto:info@zapbot.nl" className="text-emerald-400 hover:underline">info@zapbot.nl</a></p>
                 </>
               ) : (
                 <>
@@ -145,7 +145,7 @@ function App() {
                   <h3 className="text-lg font-semibold text-white mt-6">3. Your Rights</h3>
                   <p>Access, rectification, erasure, restriction, data portability, objection.</p>
                   <h3 className="text-lg font-semibold text-white mt-6">4. Contact</h3>
-                  <p><a href="mailto:info.zapbot@omardev.xyz" className="text-emerald-400 hover:underline">info.zapbot@omardev.xyz</a></p>
+                  <p><a href="mailto:info@zapbot.nl" className="text-emerald-400 hover:underline">info@zapbot.nl</a></p>
                 </>
               )}
             </div>
@@ -182,7 +182,7 @@ function App() {
             >
               {lang === 'nl' ? '🇬🇧 EN' : '🇳🇱 NL'}
             </button>
-            <a href="mailto:info.zapbot@omardev.xyz" className="px-4 py-2 rounded-xl liquid-glass font-medium hover:bg-white/10 transition flex items-center gap-2">
+            <a href="mailto:info@zapbot.nl" className="px-4 py-2 rounded-xl liquid-glass font-medium hover:bg-white/10 transition flex items-center gap-2">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
@@ -224,7 +224,7 @@ function App() {
               </a>
             ))}
             <hr className="border-white/10 my-2" />
-            <a href="mailto:info.zapbot@omardev.xyz" className="flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-white/10 transition">
+            <a href="mailto:info@zapbot.nl" className="flex items-center gap-2 px-4 py-3 rounded-xl hover:bg-white/10 transition">
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
               </svg>
@@ -599,7 +599,7 @@ function App() {
             )}
             <div className="mt-6 pt-6 border-t border-white/10">
               <p className="text-gray-500 text-sm mb-3">{t.contact.directContact}</p>
-              <a href="mailto:info.zapbot@omardev.xyz" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl liquid-glass font-medium hover:bg-white/10 transition">
+              <a href="mailto:info@zapbot.nl" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl liquid-glass font-medium hover:bg-white/10 transition">
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
@@ -633,7 +633,7 @@ function App() {
               <div className="flex flex-wrap justify-center gap-4 md:gap-6 text-sm">
                 <button onClick={() => setShowTerms(true)} className="text-white hover:text-emerald-400 transition">{t.footer.terms}</button>
                 <button onClick={() => setShowPrivacy(true)} className="text-white hover:text-emerald-400 transition">{t.footer.privacy}</button>
-                <a href="mailto:info.zapbot@omardev.xyz" className="text-white hover:text-emerald-400 transition">{t.footer.contact}</a>
+                <a href="mailto:info@zapbot.nl" className="text-white hover:text-emerald-400 transition">{t.footer.contact}</a>
               </div>
               <p className="text-white text-sm">{t.footer.copyright}</p>
             </div>
