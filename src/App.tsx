@@ -536,7 +536,7 @@ function App() {
                   <span className="text-4xl md:text-5xl font-bold text-glow">€99</span>
                   <span className="text-gray-400">{t.pricing.perMonth}</span>
                 </div>
-                <p className="text-gray-400 mb-6">{t.pricing.setup} <span className="line-through text-gray-600">{t.pricing.setupOld}</span></p>
+                {/* <p className="text-gray-400 mb-6">{t.pricing.setup} <span className="line-through text-gray-600">{t.pricing.setupOld}</span></p> */}
               </div>
               <ul className="space-y-3 mb-8 relative z-10">
                 {[t.pricing.feature1, t.pricing.feature2, t.pricing.feature3, t.pricing.feature4, t.pricing.feature5, t.pricing.feature6].map((item, i) => (
