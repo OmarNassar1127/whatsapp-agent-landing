@@ -110,7 +110,7 @@ export const translations = {
     // Pricing
     pricing: {
       title: 'Simpele prijzen',
-      subtitle: 'Geen verborgen kosten. Eerste maand gratis als pilot.',
+      subtitle: '',
       badge: 'Launch aanbieding',
       perMonth: '/maand',
       // setup: '+ €500 eenmalige setup',
@@ -263,7 +263,7 @@ export const translations = {
     // Pricing
     pricing: {
       title: 'Simple pricing',
-      subtitle: 'No hidden costs. First month free as pilot.',
+      subtitle: '',
       badge: 'Launch offer',
       perMonth: '/month',
       // setup: '+ €500 one-time setup',
