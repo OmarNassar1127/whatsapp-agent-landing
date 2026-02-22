@@ -9,7 +9,7 @@ export const translations = {
       pricing: 'Prijzen',
       contact: 'Contact',
       emailUs: 'Mail ons',
-      requestDemo: 'Demo aanvragen',
+      requestDemo: 'Aan de slag',
     },
     // Hero
     hero: {
@@ -17,47 +17,79 @@ export const translations = {
       title1: 'Je WhatsApp beantwoorden',
       title2: 'terwijl jij werkt',
       subtitle: 'AI-assistent die 24/7 je WhatsApp beheert. Beantwoordt vragen, plant afspraken in, stuurt herinneringen. Jouw stijl, zonder dat je typt.',
-      cta1: 'Gratis demo bekijken',
+      cta1: 'Start vandaag',
       cta2: 'Hoe werkt het?',
       aiResponds: 'AI beantwoordt automatisch',
     },
-    // Chat demo
+    // Chat demos
     chat: {
       msg1: 'Hoi! Kan ik morgen om 15:00 langskomen?',
       msg2: 'Hoi! 👋 Ja, morgen 15:00 is beschikbaar. Zal ik je inplannen?',
       msg3: 'Ja graag!',
       msg4: 'Top! ✅ Je afspraak staat ingepland voor morgen 15:00. Je ontvangt een herinnering 24 uur van tevoren. Tot dan!',
     },
-    // Social proof
-    social: {
-      trustedBy: 'Vertrouwd door:',
-      hairdressers: 'Kappers',
-      restaurants: 'Restaurants',
-      dentists: 'Tandartsen',
-      physios: 'Fysio\'s',
+    chatDealer: {
+      msg1: 'Hey! Hebben jullie nog een Volkswagen Golf beschikbaar?',
+      msg2: 'Hoi! 👋 Ja, we hebben een VW Golf 1.5 TSI 2023 op voorraad, 28.000 km. Wil je hem komen bekijken?',
+      msg3: 'Ja graag! Kan ik morgenochtend langs?',
+      msg4: 'Om 11:00 staat er al een afspraak, maar om 10:00 ben je welkom! 🚗 Zal ik je inplannen voor een proefrit om 10:00?',
+    },
+    chatDentist: {
+      msg1: 'Goedemiddag, ik wil graag een controle-afspraak maken.',
+      msg2: 'Hoi! 👋 Volgende week woensdag om 14:30 is beschikbaar. Past dat?',
+      msg3: 'Woensdag is prima!',
+      msg4: 'Perfect! ✅ Controle ingepland voor woensdag 14:30 bij tandarts Van Dijk. Je krijgt 24 uur van tevoren een herinnering.',
+    },
+    chatRestaurant: {
+      msg1: 'Hey! Kunnen we vanavond met 4 personen reserveren?',
+      msg2: 'Hoi! 👋 Zeker, om 19:00 of 20:30 is er plek voor 4 personen. Welke tijd?',
+      msg3: '20:30 graag!',
+      msg4: 'Top! ✅ Tafel voor 4 gereserveerd om 20:30. We kijken ernaar uit! Bij verhindering kun je tot 17:00 kosteloos annuleren.',
+    },
+    chatTabs: {
+      barber: 'Kapper',
+      dealer: 'Dealer',
+      dentist: 'Tandarts',
+      restaurant: 'Restaurant',
+    },
+    // Stats
+    stats: {
+      stat1Value: '<1 min',
+      stat1Label: 'Gemiddelde reactietijd',
+      stat2Value: '24/7',
+      stat2Label: 'Beschikbaar, ook \'s nachts',
+      stat3Value: '40%',
+      stat3Label: 'Minder no-shows',
+      stat4Value: '10+ uur',
+      stat4Label: 'Bespaard per week',
     },
     // Features
     features: {
       title: 'Wat kan de AI voor je doen?',
       subtitle: 'Alles wat je nu handmatig doet via WhatsApp, maar dan automatisch. 24/7.',
       f1Title: 'Vragen beantwoorden',
-      f1Desc: '"Wat zijn jullie openingstijden?" "Wat kost een knipbeurt?" De AI kent je bedrijf en antwoordt direct.',
+      f1Desc: '"Wat zijn jullie openingstijden?" "Wat kost dat?" De AI kent je bedrijf en antwoordt direct.',
       f2Title: 'Afspraken inplannen',
       f2Desc: 'Checkt je agenda, vindt een vrij moment, boekt in en stuurt bevestiging. Geen dubbele boekingen meer.',
       f3Title: 'Herinneringen sturen',
       f3Desc: '24 uur en 1 uur voor de afspraak. Minder no-shows, meer omzet. Klanten kunnen ook makkelijk verzetten.',
     },
-    // Use cases
-    useCases: {
-      title: 'Perfect voor',
-      hairdressers: 'Kappers',
-      hairdressersDesc: 'Boekingen terwijl je knipt',
-      restaurants: 'Restaurants',
-      restaurantsDesc: 'Reserveringen 24/7',
-      dentists: 'Tandartsen',
-      dentistsDesc: 'Minder no-shows',
-      physios: 'Fysiotherapeuten',
-      physiosDesc: 'Afspraken beheren',
+    // Before vs After
+    comparison: {
+      title: 'Zonder vs. met ZapBot',
+      subtitle: 'Zie het verschil voor je bedrijf',
+      beforeTitle: 'Zonder ZapBot',
+      afterTitle: 'Met ZapBot',
+      before1: 'Berichten missen tijdens het werk',
+      after1: 'Elke klant krijgt direct antwoord',
+      before2: 'Handmatig afspraken inplannen',
+      after2: 'Automatisch ingepland in je agenda',
+      before3: 'Klanten bellen: "Ik ben het vergeten"',
+      after3: 'Automatische herinneringen, minder no-shows',
+      before4: '\'s Avonds en weekends onbereikbaar',
+      after4: '24/7 bereikbaar, ook als je slaapt',
+      before5: 'Uren per week kwijt aan WhatsApp',
+      after5: 'Focus op je werk, AI doet de rest',
     },
     // How it works
     howItWorks: {
@@ -109,7 +141,7 @@ export const translations = {
     },
     // Pricing
     pricing: {
-      title: 'Simpele prijzen',
+      title: 'Simpele prijs',
       subtitle: '',
       badge: 'Launch aanbieding',
       perMonth: '/maand',
@@ -121,12 +153,30 @@ export const translations = {
       feature4: 'Automatische herinneringen',
       feature5: 'Jouw tone-of-voice',
       feature6: 'Nederlandse support',
-      cta: 'Gratis demo aanvragen',
+      cta: 'Ik wil dit ook →',
+      guarantee: '',
+    },
+    // FAQ
+    faq: {
+      title: 'Veelgestelde vragen',
+      subtitle: 'Alles wat je wilt weten over ZapBot',
+      q1: 'Hoe snel is ZapBot live?',
+      a1: 'Gemiddeld binnen 5 werkdagen. Na de kennismaking trainen wij de AI op jouw bedrijf, testen we samen, en dan kun je live.',
+      q2: 'Wat als de AI een fout antwoord geeft?',
+      a2: 'Via je dashboard kun je antwoorden direct aanpassen. De AI leert van je feedback en wordt steeds beter. Bij complexe vragen schakelt de AI automatisch door naar jou.',
+      q3: 'Werkt het met mijn huidige WhatsApp-nummer?',
+      a3: 'Ja! We koppelen ZapBot aan je bestaande WhatsApp Business nummer. Je hoeft geen nieuw nummer aan te maken.',
+      q4: 'Wat gebeurt er buiten openingstijden?',
+      a4: 'De AI blijft 24/7 actief. Klanten kunnen altijd berichten sturen, vragen stellen en afspraken maken — ook \'s nachts en in het weekend.',
+      q5: 'Is mijn klantdata veilig?',
+      a5: 'Absoluut. We zijn volledig AVG/GDPR compliant. Jouw data blijft jouw eigendom en wordt versleuteld opgeslagen op Europese servers.',
+      q6: 'Kan ik ZapBot eerst uitproberen?',
+      a6: 'Ja! We laten je eerst zien hoe de AI werkt voor jouw specifieke bedrijf. Geen verplichtingen.',
     },
     // Contact
     contact: {
       title: 'Klaar om tijd te besparen?',
-      subtitle: 'Laat je email achter en we nemen binnen 24 uur contact op voor een gratis demo.',
+      subtitle: 'Laat je gegevens achter en we nemen binnen 24 uur contact op.',
       namePlaceholder: 'Je naam',
       emailPlaceholder: 'je@email.nl',
       companyPlaceholder: 'Selecteer type bedrijf ▼',
@@ -137,7 +187,7 @@ export const translations = {
       companySalon: '💅 Schoonheidssalon',
       companyGarage: '🚗 Garage / Autobedrijf',
       companyOther: '📦 Anders',
-      submit: 'Demo aanvragen',
+      submit: 'Neem contact op',
       thanks: 'Bedankt! We nemen snel contact op.',
       directContact: 'Of neem direct contact op:',
       sendEmail: 'Stuur een e-mail',
@@ -162,7 +212,7 @@ export const translations = {
       pricing: 'Pricing',
       contact: 'Contact',
       emailUs: 'Email us',
-      requestDemo: 'Request demo',
+      requestDemo: 'Get started',
     },
     // Hero
     hero: {
@@ -170,47 +220,79 @@ export const translations = {
       title1: 'Your WhatsApp answered',
       title2: 'while you work',
       subtitle: 'AI assistant that manages your WhatsApp 24/7. Answers questions, schedules appointments, sends reminders. Your style, without typing.',
-      cta1: 'Watch free demo',
+      cta1: 'Get started',
       cta2: 'How does it work?',
       aiResponds: 'AI responds automatically',
     },
-    // Chat demo
+    // Chat demos
     chat: {
       msg1: 'Hi! Can I come by tomorrow at 3 PM?',
       msg2: 'Hi! 👋 Yes, tomorrow 3 PM is available. Shall I book you in?',
       msg3: 'Yes please!',
       msg4: 'Great! ✅ Your appointment is scheduled for tomorrow 3 PM. You\'ll receive a reminder 24 hours before. See you then!',
     },
-    // Social proof
-    social: {
-      trustedBy: 'Trusted by:',
-      hairdressers: 'Hairdressers',
-      restaurants: 'Restaurants',
-      dentists: 'Dentists',
-      physios: 'Physios',
+    chatDealer: {
+      msg1: 'Hey! Do you have any Volkswagen Golfs available?',
+      msg2: 'Hi! 👋 Yes, we have a VW Golf 1.5 TSI 2023 in stock, 28,000 km. Would you like to come see it?',
+      msg3: 'Yes please! Can I come by tomorrow morning?',
+      msg4: 'There\'s an appointment at 11 AM, but you\'re welcome at 10 AM! 🚗 Shall I book you in for a test drive at 10?',
+    },
+    chatDentist: {
+      msg1: 'Good afternoon, I\'d like to book a checkup appointment.',
+      msg2: 'Hi! 👋 Next Wednesday at 2:30 PM is available. Does that work?',
+      msg3: 'Wednesday is perfect!',
+      msg4: 'Perfect! ✅ Checkup scheduled for Wednesday 2:30 PM with Dr. Van Dijk. You\'ll receive a reminder 24 hours before.',
+    },
+    chatRestaurant: {
+      msg1: 'Hey! Can we reserve a table for 4 tonight?',
+      msg2: 'Hi! 👋 Sure, we have spots at 7 PM or 8:30 PM for 4 people. Which time?',
+      msg3: '8:30 PM please!',
+      msg4: 'Great! ✅ Table for 4 reserved at 8:30 PM. We look forward to seeing you! Free cancellation until 5 PM.',
+    },
+    chatTabs: {
+      barber: 'Barber',
+      dealer: 'Dealer',
+      dentist: 'Dentist',
+      restaurant: 'Restaurant',
+    },
+    // Stats
+    stats: {
+      stat1Value: '<1 min',
+      stat1Label: 'Average response time',
+      stat2Value: '24/7',
+      stat2Label: 'Available, even at night',
+      stat3Value: '40%',
+      stat3Label: 'Fewer no-shows',
+      stat4Value: '10+ hrs',
+      stat4Label: 'Saved per week',
     },
     // Features
     features: {
       title: 'What can the AI do for you?',
       subtitle: 'Everything you do manually on WhatsApp, but automated. 24/7.',
       f1Title: 'Answer questions',
-      f1Desc: '"What are your opening hours?" "How much is a haircut?" The AI knows your business and responds instantly.',
+      f1Desc: '"What are your opening hours?" "How much does it cost?" The AI knows your business and responds instantly.',
       f2Title: 'Schedule appointments',
       f2Desc: 'Checks your calendar, finds available slots, books and sends confirmation. No more double bookings.',
       f3Title: 'Send reminders',
       f3Desc: '24 hours and 1 hour before the appointment. Fewer no-shows, more revenue. Customers can easily reschedule.',
     },
-    // Use cases
-    useCases: {
-      title: 'Perfect for',
-      hairdressers: 'Hairdressers',
-      hairdressersDesc: 'Bookings while you cut',
-      restaurants: 'Restaurants',
-      restaurantsDesc: 'Reservations 24/7',
-      dentists: 'Dentists',
-      dentistsDesc: 'Fewer no-shows',
-      physios: 'Physiotherapists',
-      physiosDesc: 'Manage appointments',
+    // Before vs After
+    comparison: {
+      title: 'Without vs. with ZapBot',
+      subtitle: 'See the difference for your business',
+      beforeTitle: 'Without ZapBot',
+      afterTitle: 'With ZapBot',
+      before1: 'Missing messages while working',
+      after1: 'Every customer gets an instant reply',
+      before2: 'Manually scheduling appointments',
+      after2: 'Automatically booked in your calendar',
+      before3: 'Customers call: "I forgot my appointment"',
+      after3: 'Automatic reminders, fewer no-shows',
+      before4: 'Unreachable evenings and weekends',
+      after4: '24/7 available, even while you sleep',
+      before5: 'Hours per week lost to WhatsApp',
+      after5: 'Focus on your work, AI handles the rest',
     },
     // How it works
     howItWorks: {
@@ -262,7 +344,7 @@ export const translations = {
     },
     // Pricing
     pricing: {
-      title: 'Simple pricing',
+      title: 'Simple price',
       subtitle: '',
       badge: 'Launch offer',
       perMonth: '/month',
@@ -274,12 +356,30 @@ export const translations = {
       feature4: 'Automatic reminders',
       feature5: 'Your tone of voice',
       feature6: 'Dedicated support',
-      cta: 'Request free demo',
+      cta: 'I want this too →',
+      guarantee: '',
+    },
+    // FAQ
+    faq: {
+      title: 'Frequently asked questions',
+      subtitle: 'Everything you need to know about ZapBot',
+      q1: 'How fast can ZapBot go live?',
+      a1: 'On average within 5 business days. After the introduction call, we train the AI on your business, test together, and then you go live.',
+      q2: 'What if the AI gives a wrong answer?',
+      a2: 'You can adjust answers directly via your dashboard. The AI learns from your feedback and keeps improving. For complex questions, the AI automatically forwards to you.',
+      q3: 'Does it work with my current WhatsApp number?',
+      a3: 'Yes! We connect ZapBot to your existing WhatsApp Business number. No need to create a new number.',
+      q4: 'What happens outside business hours?',
+      a4: 'The AI stays active 24/7. Customers can always send messages, ask questions, and book appointments — even at night and on weekends.',
+      q5: 'Is my customer data safe?',
+      a5: 'Absolutely. We are fully GDPR compliant. Your data remains your property and is stored encrypted on European servers.',
+      q6: 'Can I try ZapBot first?',
+      a6: 'Yes! We first show you how the AI works for your specific business. No obligations.',
     },
     // Contact
     contact: {
       title: 'Ready to save time?',
-      subtitle: 'Leave your email and we\'ll contact you within 24 hours for a free demo.',
+      subtitle: 'Leave your details and we\'ll contact you within 24 hours.',
       namePlaceholder: 'Your name',
       emailPlaceholder: 'you@email.com',
       companyPlaceholder: 'Select business type ▼',
@@ -290,7 +390,7 @@ export const translations = {
       companySalon: '💅 Beauty salon',
       companyGarage: '🚗 Garage / Auto shop',
       companyOther: '📦 Other',
-      submit: 'Request demo',
+      submit: 'Get in touch',
       thanks: 'Thank you! We\'ll contact you soon.',
       directContact: 'Or contact us directly:',
       sendEmail: 'Send an email',

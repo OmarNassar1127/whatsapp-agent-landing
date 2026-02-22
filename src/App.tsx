@@ -12,6 +12,8 @@ function App() {
   const [showTerms, setShowTerms] = useState(false)
   const [showPrivacy, setShowPrivacy] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [activeDemo, setActiveDemo] = useState(0)
+  const [openFaq, setOpenFaq] = useState<number | null>(null)
 
   const t = translations[lang]
 
@@ -264,35 +266,63 @@ function App() {
             </div>
           </div>
 
-          {/* Demo mockup */}
+          {/* Demo mockup with tabs */}
           <div className="mt-12 md:mt-16 max-w-md mx-auto">
+            {/* Industry tabs */}
+            <div className="flex justify-center gap-2 mb-4">
+              {[
+                { icon: '✂️', label: t.chatTabs.barber },
+                { icon: '🚗', label: t.chatTabs.dealer },
+                { icon: '🦷', label: t.chatTabs.dentist },
+                { icon: '🍽️', label: t.chatTabs.restaurant },
+              ].map((tab, i) => (
+                <button
+                  key={i}
+                  onClick={() => setActiveDemo(i)}
+                  className={`px-3 py-2 rounded-xl text-sm font-medium transition-all ${
+                    activeDemo === i
+                      ? 'whatsapp-gradient glow-green-subtle text-white'
+                      : 'liquid-glass text-gray-400 hover:text-white hover:bg-white/10'
+                  }`}
+                >
+                  <span className="mr-1">{tab.icon}</span>
+                  <span className="hidden sm:inline">{tab.label}</span>
+                </button>
+              ))}
+            </div>
             <div className="liquid-glass-strong rounded-3xl p-4 glow-green-subtle">
-              <div className="bg-gradient-to-b from-emerald-900/50 to-emerald-950/50 rounded-2xl p-4 space-y-3">
-                <div className="flex justify-end">
-                  <div className="bg-emerald-600/80 backdrop-blur rounded-2xl rounded-br-md px-4 py-2 max-w-[80%]">
-                    <p className="text-sm">{t.chat.msg1}</p>
-                    <p className="text-xs text-emerald-200 text-right mt-1">14:32</p>
+              {(() => {
+                const demos = [t.chat, t.chatDealer, t.chatDentist, t.chatRestaurant]
+                const demo = demos[activeDemo]
+                return (
+                  <div className="bg-gradient-to-b from-emerald-900/50 to-emerald-950/50 rounded-2xl p-4 space-y-3">
+                    <div className="flex justify-end">
+                      <div className="bg-emerald-600/80 backdrop-blur rounded-2xl rounded-br-md px-4 py-2 max-w-[80%]">
+                        <p className="text-sm">{demo.msg1}</p>
+                        <p className="text-xs text-emerald-200 text-right mt-1">14:32</p>
+                      </div>
+                    </div>
+                    <div className="flex justify-start">
+                      <div className="liquid-glass rounded-2xl rounded-bl-md px-4 py-2 max-w-[80%]">
+                        <p className="text-sm">{demo.msg2}</p>
+                        <p className="text-xs text-gray-400 mt-1">14:32 ✓✓</p>
+                      </div>
+                    </div>
+                    <div className="flex justify-end">
+                      <div className="bg-emerald-600/80 backdrop-blur rounded-2xl rounded-br-md px-4 py-2 max-w-[80%]">
+                        <p className="text-sm">{demo.msg3}</p>
+                        <p className="text-xs text-emerald-200 text-right mt-1">14:33</p>
+                      </div>
+                    </div>
+                    <div className="flex justify-start">
+                      <div className="liquid-glass rounded-2xl rounded-bl-md px-4 py-2 max-w-[80%]">
+                        <p className="text-sm">{demo.msg4}</p>
+                        <p className="text-xs text-gray-400 mt-1">14:33 ✓✓</p>
+                      </div>
+                    </div>
                   </div>
-                </div>
-                <div className="flex justify-start">
-                  <div className="liquid-glass rounded-2xl rounded-bl-md px-4 py-2 max-w-[80%]">
-                    <p className="text-sm">{t.chat.msg2}</p>
-                    <p className="text-xs text-gray-400 mt-1">14:32 ✓✓</p>
-                  </div>
-                </div>
-                <div className="flex justify-end">
-                  <div className="bg-emerald-600/80 backdrop-blur rounded-2xl rounded-br-md px-4 py-2 max-w-[80%]">
-                    <p className="text-sm">{t.chat.msg3}</p>
-                    <p className="text-xs text-emerald-200 text-right mt-1">14:33</p>
-                  </div>
-                </div>
-                <div className="flex justify-start">
-                  <div className="liquid-glass rounded-2xl rounded-bl-md px-4 py-2 max-w-[80%]">
-                    <p className="text-sm">{t.chat.msg4}</p>
-                    <p className="text-xs text-gray-400 mt-1">14:33 ✓✓</p>
-                  </div>
-                </div>
-              </div>
+                )
+              })()}
               <div className="mt-3 flex items-center gap-2 text-gray-500 text-sm justify-center">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 {t.hero.aiResponds}
@@ -302,19 +332,22 @@ function App() {
         </div>
       </section>
 
-      {/* Social proof */}
+      {/* Stats */}
       <section className="py-8 md:py-12 relative z-10">
         <div className="max-w-6xl mx-auto px-4">
-          <div className="liquid-glass rounded-2xl py-6 px-4 md:px-8">
-            <div className="flex flex-col md:flex-row flex-wrap justify-center items-center gap-4 md:gap-8 text-gray-400">
-              <p className="text-sm">{t.social.trustedBy}</p>
-              <div className="flex flex-wrap items-center justify-center gap-4 md:gap-6">
-                <span className="font-semibold text-white/80">✂️ {t.social.hairdressers}</span>
-                <span className="font-semibold text-white/80">🍽️ {t.social.restaurants}</span>
-                <span className="font-semibold text-white/80">🦷 {t.social.dentists}</span>
-                <span className="font-semibold text-white/80">💪 {t.social.physios}</span>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {[
+              { value: t.stats.stat1Value, label: t.stats.stat1Label, icon: '⚡' },
+              { value: t.stats.stat2Value, label: t.stats.stat2Label, icon: '🌙' },
+              { value: t.stats.stat3Value, label: t.stats.stat3Label, icon: '📉' },
+              { value: t.stats.stat4Value, label: t.stats.stat4Label, icon: '⏱️' },
+            ].map((stat, i) => (
+              <div key={i} className="liquid-glass rounded-2xl p-4 md:p-6 text-center">
+                <span className="text-lg mb-2 block">{stat.icon}</span>
+                <p className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">{stat.value}</p>
+                <p className="text-gray-400 text-xs md:text-sm mt-1">{stat.label}</p>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -358,25 +391,44 @@ function App() {
         </div>
       </section>
 
-      {/* Use cases */}
+      {/* Before vs After */}
       <section className="py-16 md:py-20 px-4 relative z-10">
-        <div className="max-w-6xl mx-auto">
+        <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.useCases.title}</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.comparison.title}</h2>
+            <p className="text-gray-400">{t.comparison.subtitle}</p>
           </div>
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {[
-              { icon: "✂️", title: t.useCases.hairdressers, desc: t.useCases.hairdressersDesc },
-              { icon: "🍽️", title: t.useCases.restaurants, desc: t.useCases.restaurantsDesc },
-              { icon: "🦷", title: t.useCases.dentists, desc: t.useCases.dentistsDesc },
-              { icon: "💪", title: t.useCases.physios, desc: t.useCases.physiosDesc },
-            ].map((item, i) => (
-              <div key={i} className="liquid-glass-card rounded-xl p-4 md:p-6 text-center">
-                <span className="text-3xl md:text-4xl mb-3 md:mb-4 block">{item.icon}</span>
-                <h3 className="font-semibold text-base md:text-lg mb-1">{item.title}</h3>
-                <p className="text-gray-400 text-xs md:text-sm">{item.desc}</p>
-              </div>
-            ))}
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Before */}
+            <div className="liquid-glass-card rounded-2xl p-6 border-red-500/20 relative">
+              <h3 className="text-lg font-semibold mb-5 text-red-400 flex items-center gap-2">
+                <span className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center text-sm">✗</span>
+                {t.comparison.beforeTitle}
+              </h3>
+              <ul className="space-y-4">
+                {[t.comparison.before1, t.comparison.before2, t.comparison.before3, t.comparison.before4, t.comparison.before5].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-gray-400">
+                    <span className="text-red-400/60 mt-0.5 flex-shrink-0">&#x2717;</span>
+                    <span className="text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            {/* After */}
+            <div className="liquid-glass-card rounded-2xl p-6 border-emerald-500/20 relative glow-green-subtle">
+              <h3 className="text-lg font-semibold mb-5 text-emerald-400 flex items-center gap-2">
+                <span className="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-sm">✓</span>
+                {t.comparison.afterTitle}
+              </h3>
+              <ul className="space-y-4">
+                {[t.comparison.after1, t.comparison.after2, t.comparison.after3, t.comparison.after4, t.comparison.after5].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3">
+                    <span className="text-emerald-400 mt-0.5 flex-shrink-0">&#x2713;</span>
+                    <span className="text-sm">{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </section>
@@ -523,37 +575,96 @@ function App() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 md:mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.pricing.title}</h2>
-            <p className="text-gray-400">{t.pricing.subtitle}</p>
           </div>
-          <div className="max-w-lg mx-auto">
-            <div className="liquid-glass-strong rounded-2xl p-6 md:p-8 glow-green-subtle relative overflow-hidden">
-              <div className="absolute inset-0 shimmer pointer-events-none"></div>
-              <div className="text-center relative z-10">
-                <span className="inline-block px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 text-sm font-medium mb-4 border border-emerald-500/30">
-                  {t.pricing.badge}
-                </span>
-                <div className="mb-4">
-                  <span className="text-4xl md:text-5xl font-bold text-glow">€99</span>
-                  <span className="text-gray-400">{t.pricing.perMonth}</span>
-                </div>
-                {/* <p className="text-gray-400 mb-6">{t.pricing.setup} <span className="line-through text-gray-600">{t.pricing.setupOld}</span></p> */}
-              </div>
-              <ul className="space-y-3 mb-8 relative z-10">
-                {[t.pricing.feature1, t.pricing.feature2, t.pricing.feature3, t.pricing.feature4, t.pricing.feature5, t.pricing.feature6].map((item, i) => (
-                  <li key={i} className="flex items-center gap-3">
-                    <div className="w-5 h-5 rounded-full whatsapp-gradient flex items-center justify-center flex-shrink-0">
-                      <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                      </svg>
+          <div className="max-w-4xl mx-auto">
+            <div className="relative">
+              {/* Subtle glow behind card */}
+              <div className="absolute -inset-px bg-gradient-to-r from-emerald-500/20 via-transparent to-emerald-500/10 rounded-3xl blur-lg"></div>
+              <div className="relative rounded-3xl p-6 md:p-10 bg-gradient-to-br from-white/[0.07] to-white/[0.02] backdrop-blur-xl border border-white/10">
+                <div className="flex flex-col md:flex-row md:items-center md:gap-10">
+
+                  {/* Left: Price + badge */}
+                  <div className="text-center md:text-left mb-6 md:mb-0">
+                    <span className="inline-block px-3 py-1 rounded-full text-emerald-400 text-xs font-semibold tracking-wider uppercase bg-emerald-500/10 border border-emerald-500/20 mb-4">
+                      {t.pricing.badge}
+                    </span>
+                    <div className="flex items-baseline justify-center md:justify-start">
+                      <span className="text-xl text-gray-400 mr-1">€</span>
+                      <span className="text-6xl font-bold tracking-tight text-white">75</span>
+                      <span className="text-gray-500 ml-1">{t.pricing.perMonth}</span>
                     </div>
-                    <span className="text-sm md:text-base">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              <a href="#contact" className="block w-full py-4 rounded-xl whatsapp-gradient font-semibold text-center hover:opacity-90 transition glow-green relative z-10">
-                {t.pricing.cta}
-              </a>
+                  </div>
+
+                  {/* Divider */}
+                  <div className="hidden md:block w-px self-stretch bg-gradient-to-b from-transparent via-white/10 to-transparent"></div>
+                  <div className="md:hidden h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-6"></div>
+
+                  {/* Center: Features */}
+                  <div className="flex-1 mb-6 md:mb-0">
+                    <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                      {[t.pricing.feature1, t.pricing.feature2, t.pricing.feature3, t.pricing.feature4, t.pricing.feature5, t.pricing.feature6].map((item, i) => (
+                        <li key={i} className="flex items-center gap-2.5">
+                          <svg className="w-4 h-4 text-emerald-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span className="text-sm text-gray-300">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Right: CTA */}
+                  <div className="flex items-center">
+                    <a href="#contact" className="w-full md:w-auto px-8 py-3.5 rounded-xl whatsapp-gradient font-semibold text-center hover:opacity-90 transition whitespace-nowrap">
+                      {t.pricing.cta}
+                    </a>
+                  </div>
+
+                </div>
+              </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 md:py-20 px-4 relative z-10">
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12 md:mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold mb-4">{t.faq.title}</h2>
+            <p className="text-gray-400">{t.faq.subtitle}</p>
+          </div>
+          <div className="space-y-3">
+            {[
+              { q: t.faq.q1, a: t.faq.a1 },
+              { q: t.faq.q2, a: t.faq.a2 },
+              { q: t.faq.q3, a: t.faq.a3 },
+              { q: t.faq.q4, a: t.faq.a4 },
+              { q: t.faq.q5, a: t.faq.a5 },
+              { q: t.faq.q6, a: t.faq.a6 },
+            ].map((item, i) => (
+              <div key={i} className="liquid-glass rounded-xl overflow-hidden">
+                <button
+                  onClick={() => setOpenFaq(openFaq === i ? null : i)}
+                  className="w-full px-6 py-4 flex items-center justify-between text-left hover:bg-white/5 transition"
+                >
+                  <span className="font-medium pr-4">{item.q}</span>
+                  <svg
+                    className={`w-5 h-5 text-emerald-400 flex-shrink-0 transition-transform duration-200 ${openFaq === i ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div
+                  className={`overflow-hidden transition-all duration-200 ${openFaq === i ? 'max-h-48' : 'max-h-0'}`}
+                >
+                  <p className="px-6 pb-4 text-gray-400 text-sm leading-relaxed">{item.a}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
