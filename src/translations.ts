@@ -5,6 +5,7 @@ export const translations = {
     // Nav
     nav: {
       features: 'Features',
+      calendar: 'Agenda',
       howItWorks: 'Hoe werkt het',
       pricing: 'Prijzen',
       contact: 'Contact',
@@ -73,6 +74,18 @@ export const translations = {
       f2Desc: 'Checkt je agenda, vindt een vrij moment, boekt in en stuurt bevestiging. Geen dubbele boekingen meer.',
       f3Title: 'Herinneringen sturen',
       f3Desc: '24 uur en 1 uur voor de afspraak. Minder no-shows, meer omzet. Klanten kunnen ook makkelijk verzetten.',
+    },
+    // Calendar Integration
+    calendarIntegration: {
+      badge: 'Direct gekoppeld',
+      title: 'Automatisch in je agenda',
+      subtitle: 'Van WhatsApp-bericht naar afspraak in je Google Calendar. Zonder dat je een vinger uitsteekt.',
+      point1Title: 'Realtime sync',
+      point1Desc: 'Klant vraagt om afspraak → AI checkt je agenda → boekt beschikbaar tijdslot → verschijnt direct in Google Calendar.',
+      point2Title: 'Geen dubbele boekingen',
+      point2Desc: 'De AI ziet exact welke tijden vrij zijn. Twee klanten tegelijk inplannen? Onmogelijk.',
+      point3Title: 'Werkt met je werkwijze',
+      point3Desc: 'Al je afspraken in Google Calendar? Perfect. ZapBot houdt het bij zonder dat jij iets hoeft aan te passen.',
     },
     // Before vs After
     comparison: {
@@ -207,6 +220,7 @@ export const translations = {
   en: {
     // Nav
     nav: {
+      calendar: 'Calendar',
       features: 'Features',
       howItWorks: 'How it works',
       pricing: 'Pricing',
@@ -276,6 +290,18 @@ export const translations = {
       f2Desc: 'Checks your calendar, finds available slots, books and sends confirmation. No more double bookings.',
       f3Title: 'Send reminders',
       f3Desc: '24 hours and 1 hour before the appointment. Fewer no-shows, more revenue. Customers can easily reschedule.',
+    },
+    // Calendar Integration
+    calendarIntegration: {
+      badge: 'Direct integration',
+      title: 'Automatically in your calendar',
+      subtitle: 'From WhatsApp message to appointment in your Google Calendar. Without lifting a finger.',
+      point1Title: 'Real-time sync',
+      point1Desc: 'Customer requests appointment → AI checks your calendar → books available slot → appears directly in Google Calendar.',
+      point2Title: 'No double bookings',
+      point2Desc: 'The AI sees exactly which times are free. Scheduling two customers at once? Impossible.',
+      point3Title: 'Works with your workflow',
+      point3Desc: 'All your appointments in Google Calendar? Perfect. ZapBot maintains them without you having to change anything.',
     },
     // Before vs After
     comparison: {

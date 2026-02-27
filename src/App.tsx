@@ -49,6 +49,7 @@ function App() {
 
   const navItems = [
     { label: t.nav.features, href: '#features' },
+    { label: t.nav.calendar, href: "#calendar" },
     { label: t.nav.howItWorks, href: '#how-it-works' },
     { label: t.nav.pricing, href: '#pricing' },
     { label: t.nav.contact, href: '#contact' },
@@ -386,6 +387,119 @@ function App() {
               </div>
               <h3 className="text-xl font-semibold mb-2">{t.features.f3Title}</h3>
               <p className="text-gray-400">{t.features.f3Desc}</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {/* Google Calendar Integration */}
+      <section id="calendar" className="py-16 md:py-20 px-4 relative z-10">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+            {/* Left side: copy */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full liquid-glass text-emerald-400 text-sm font-medium mb-6">
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd"/>
+                </svg>
+                {t.calendarIntegration.badge}
+              </div>
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                {t.calendarIntegration.title}
+              </h2>
+              <p className="text-gray-400 text-lg mb-8">
+                {t.calendarIntegration.subtitle}
+              </p>
+
+              <div className="space-y-6">
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded-xl whatsapp-gradient flex items-center justify-center flex-shrink-0 glow-green-subtle">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">{t.calendarIntegration.point1Title}</h3>
+                    <p className="text-gray-400 text-sm">{t.calendarIntegration.point1Desc}</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded-xl whatsapp-gradient flex items-center justify-center flex-shrink-0 glow-green-subtle">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">{t.calendarIntegration.point2Title}</h3>
+                    <p className="text-gray-400 text-sm">{t.calendarIntegration.point2Desc}</p>
+                  </div>
+                </div>
+
+                <div className="flex gap-4">
+                  <div className="w-10 h-10 rounded-xl whatsapp-gradient flex items-center justify-center flex-shrink-0 glow-green-subtle">
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="font-semibold mb-1">{t.calendarIntegration.point3Title}</h3>
+                    <p className="text-gray-400 text-sm">{t.calendarIntegration.point3Desc}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Right side: Google Calendar screenshot placeholder */}
+            <div className="relative">
+              <div className="liquid-glass-strong rounded-2xl p-6 glow-green-subtle">
+                <div className="bg-white rounded-xl overflow-hidden shadow-2xl">
+                  {/* Google Calendar mockup */}
+                  <div className="bg-white p-4">
+                    <div className="flex items-center gap-3 mb-4 pb-3 border-b border-gray-200">
+                      <svg className="w-6 h-6 text-blue-600" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10z"/>
+                      </svg>
+                      <span className="font-semibold text-gray-800">Google Calendar</span>
+                    </div>
+                    
+                    {/* Calendar grid mockup */}
+                    <div className="space-y-2">
+                      {/* Week view */}
+                      <div className="grid grid-cols-7 gap-1 mb-3">
+                        {['Ma', 'Di', 'Wo', 'Do', 'Vr', 'Za', 'Zo'].map((day, i) => (
+                          <div key={i} className="text-center text-xs text-gray-500 font-medium">{day}</div>
+                        ))}
+                      </div>
+                      
+                      {/* Appointment blocks */}
+                      <div className="space-y-2">
+                        <div className="bg-blue-50 border-l-4 border-blue-500 rounded p-2">
+                          <div className="text-xs text-blue-700 font-medium">10:00 - 11:00</div>
+                          <div className="text-sm text-gray-800">Afspraak bestaande klant</div>
+                        </div>
+                        <div className="bg-green-50 border-l-4 border-emerald-500 rounded p-2 relative">
+                          <div className="absolute -right-2 -top-2 w-6 h-6 rounded-full bg-emerald-500 flex items-center justify-center text-white text-xs font-bold animate-pulse">
+                            ✓
+                          </div>
+                          <div className="text-xs text-emerald-700 font-medium">15:00 - 16:00</div>
+                          <div className="text-sm text-gray-800 font-medium">
+                            📱 Nieuw - Via WhatsApp
+                          </div>
+                          <div className="text-xs text-gray-500 mt-1">Automatisch ingepland</div>
+                        </div>
+                        <div className="bg-blue-50 border-l-4 border-blue-500 rounded p-2">
+                          <div className="text-xs text-blue-700 font-medium">16:30 - 17:30</div>
+                          <div className="text-sm text-gray-800">Afspraak bestaande klant</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
             </div>
           </div>
         </div>
